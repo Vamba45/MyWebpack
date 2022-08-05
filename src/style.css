@@ -1,3 +1,5 @@
 .hello {
     color: red;
+    background: url('./icon.png') center top no-repeat;
+    height: 200px;
 }
