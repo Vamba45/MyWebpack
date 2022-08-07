@@ -1,10 +1,8 @@
 import _ from 'lodash'
-import './style.css'
-import './foonts.css'
-import './burger.css'
+import './style/style.scss'
 // import Icon from './icon.png'
 
-import printMe from './print.js';
+import printMe from './js/print.js';
 
 
 
@@ -29,5 +27,3 @@ function component() {
 }
 
 document.body.appendChild(component());
-
-console.log("Rains of Castamere")

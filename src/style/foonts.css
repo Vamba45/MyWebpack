@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MyFont';
-    src: url('./SquarePeg-Regular.ttf');
+    src: url('../fonts/SquarePeg-Regular.ttf');
     font-weight: 600;
     font-style: normal;
 }

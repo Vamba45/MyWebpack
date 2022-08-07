@@ -12,29 +12,44 @@ module.exports = {
         static: './dist',
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: 'assets/js/[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Development',
+            template: './src/index.html',
+            inject: 'body',
         }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'assets/css/[name].css'
+        }),
     ],
     module: {
+        generator: {
+            'asset/resource': {
+                outputPath: 'assets/'
+            }
+        },
         rules: [
             {
-                test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                test: /\.s[ac]ss$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
+                generator: {
+                    filename: 'img/[name][ext]',
+                },
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name][ext]',
+                },
             },
         ],
     },
