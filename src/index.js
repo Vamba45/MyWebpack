@@ -1,5 +1,7 @@
 import _ from 'lodash'
 import './style.css'
+import './foonts.css'
+import './burger.css'
 // import Icon from './icon.png'
 
 import printMe from './print.js';
@@ -21,8 +23,11 @@ function component() {
 
     // element.appendChild(myIcon)
     element.appendChild(btn)
+    element.innerHTML = `<div><ul><li class="pynkt">tip</li><li class="pynkt">tip</li></ul></div>`
 
     return element;
 }
 
 document.body.appendChild(component());
+
+console.log("Rains of Castamere")
